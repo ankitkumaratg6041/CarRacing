@@ -84,6 +84,7 @@ const score = document.querySelector('.score');
             let enemyCar = document.querySelector('.enemy');
 
 
+
             // enemyCar.style.backgroundImage = "url('mycar"+ranEnemy+".png')";
             // console.log(road);
             // player.score = 0;
@@ -122,8 +123,8 @@ const score = document.querySelector('.score');
         }
 
         function start() {
-            music.play();
             // gameArea.classList.remove('hide');
+            music.play();
             startScreen.classList.add('hide');
             gameArea.innerHTML = '';
             console.log(gameArea.innerHTML);
