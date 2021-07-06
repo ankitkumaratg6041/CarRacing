@@ -2,6 +2,8 @@ const score = document.querySelector('.score');
         const startScreen = document.querySelector('.startScreen');
         const gameArea = document.querySelector('.gameArea');
 
+        let music = new Audio("music.mp3");
+
         startScreen.addEventListener('click', start);
 
         let player = { speed: 5, score: 0};
@@ -51,6 +53,9 @@ const score = document.querySelector('.score');
             player.start = false;
             startScreen.classList.remove('hide');
             startScreen.innerHTML = '<big><b>💥Game over💥</b></big> <br> Your Score is <big><b>' + player.score + '</b></big><br><big><b>Click here</b></big> to restart the game!!'
+            music.pause();
+            music = " ";
+            music = new Audio("music.mp3");
         }
 
         function moveEnemy(car) {
@@ -117,6 +122,7 @@ const score = document.querySelector('.score');
         }
 
         function start() {
+            music.play();
             // gameArea.classList.remove('hide');
             startScreen.classList.add('hide');
             gameArea.innerHTML = '';
